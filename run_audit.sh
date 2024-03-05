@@ -86,7 +86,9 @@ else
   os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr '[:lower:]' '[:upper:]' )"
 fi
 
-os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
+# this is the RHEL7-STIG-Audit so force os_maj_ver to be 7
+#os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
+os_maj_ver='7'
 audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
