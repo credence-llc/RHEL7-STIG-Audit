@@ -7,14 +7,21 @@ benchmark_version: 'v3.13'
 run_heavy_tests: true
 timeout_ms: 120000
 
-# set to redhat/centos/oracle
-rhel8stig_os_distribution: redhat
-rpm_gpg_keys: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+# amazon-linux
+rhel8stig_os_distribution: Amazon
+rpm_gpg_key: /etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
 gpg_key:
-  - name: 'release key 2'
-    fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
-  - name: 'auxiliary key'
-    fingerprint: '43A6 E49C 4A38 F4BE 9ABF  2A53 4568 9C88 2FA6 58E0'
+  - name: 'Amazon Linux'
+    fingerprint: '99E6 17FE 5DB5 27C0 D8BD  5F8E 11CF 1F95 C87F 5B1A'
+
+# set to redhat/centos/oracle
+# rhel8stig_os_distribution: redhat
+# rpm_gpg_keys: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+# gpg_key:
+#   - name: 'release key 2'
+#     fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
+#   - name: 'auxiliary key'
+#     fingerprint: '43A6 E49C 4A38 F4BE 9ABF  2A53 4568 9C88 2FA6 58E0'
 
 # centos
 #rhel8stig_os_distribution: centos-release
@@ -310,8 +317,8 @@ rhel7stig_auditd: true
 rhel7stig_tftp_required: false
 
 rhel7stig_nameservers:
-  - 10.0.2.3
-  - 9.9.9.9
+  - 10.22.3.10
+  - 10.22.4.10
 
 # RHEL_07_010050
 # Ability to use own banner if set to false
